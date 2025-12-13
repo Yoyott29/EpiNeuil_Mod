@@ -24,6 +24,7 @@ public class Sounds {
             FART, STEP, PLACE, HIT, FALL);
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
+        System.out.println("[DEBUG] Registering sound: " + name);
     return SOUNDS_EVENTS.register(name, () -> 
         (SoundEvent) SoundEvent.createVariableRangeEvent(
             ResourceLocation.fromNamespaceAndPath(EpiNeuil.MOD_ID, name)

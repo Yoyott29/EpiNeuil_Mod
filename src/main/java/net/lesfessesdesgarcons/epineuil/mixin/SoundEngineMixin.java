@@ -22,12 +22,14 @@ public class SoundEngineMixin {
 
         ResourceLocation loc = instance.getLocation();
         if (loc != null) {
-            String namespace = loc.getNamespace();
             String path = loc.getPath();
-            
-            // Check for block break sounds - try multiple patterns
+
+            // 🔹 DEBUG: print every sound being played
+            System.out.println("[DEBUG] Sound played: " + path);
+
             if (path.contains("break") || path.contains("dig")) {
-                // Replace with fart sound
+                System.out.println("[DEBUG] Replacing block break sound with fart!");
+
                 return SimpleSoundInstance.forUI(
                         Sounds.FART.get(),
                         instance.getVolume(),
