@@ -43,6 +43,30 @@ public class Items
                 ArmorItem.Type.BOOTS,
                 new Item.Properties()));
 
+    public static final RegistryObject<Item> PHOENIX_HELMET =
+            ITEMS.register("phoenix_helmet", () -> new ModArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.HELMET,
+                new Item.Properties()));
+
+    public static final RegistryObject<Item> PHOENIX_CHESTPLATE =
+            ITEMS.register("phoenix_chestplate", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.CHESTPLATE,
+                new Item.Properties()));
+
+    public static final RegistryObject<Item> PHOENIX_LEGGINGS =
+            ITEMS.register("phoenix_leggings", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.LEGGINGS,
+                new Item.Properties()));
+
+    public static final RegistryObject<Item> PHOENIX_BOOTS =
+            ITEMS.register("phoenix_boots", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.BOOTS,
+                new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

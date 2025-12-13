@@ -56,6 +56,10 @@ public class EpiNeuil
             event.accept(Items.CHICKEN_CHESTPLATE);
             event.accept(Items.CHICKEN_HELMET);
             event.accept(Items.CHICKEN_LEGGINGS);
+            event.accept(Items.PHOENIX_BOOTS);
+            event.accept(Items.PHOENIX_CHESTPLATE);
+            event.accept(Items.PHOENIX_HELMET);
+            event.accept(Items.PHOENIX_LEGGINGS);
         }
     }
 

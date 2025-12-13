@@ -17,9 +17,15 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<Holder<ArmorMaterial>, List<MobEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ArmorMaterials.CHICKEN_ARMOR,
-                            List.of(new MobEffectInstance(MobEffects.ABSORPTION, 200, 0, true, true),
-                            new MobEffectInstance(MobEffects.JUMP, 200, 1, true, true),
-                            new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 4, true, true)))
+                            List.of(new MobEffectInstance(MobEffects.ABSORPTION, 3000, 0, true, true),
+                            new MobEffectInstance(MobEffects.JUMP, 3000, 1, true, true),
+                            new MobEffectInstance(MobEffects.SLOW_FALLING, 3000, 4, true, true)))
+                    .put(ArmorMaterials.PHOENIX_ARMOR,
+                            List.of(new MobEffectInstance(MobEffects.ABSORPTION, 3000, 1, true, true),
+                            new MobEffectInstance(MobEffects.JUMP, 3000, 1, true, true),
+                            new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3000, 1, true, true),
+                            new MobEffectInstance(MobEffects.NIGHT_VISION, 3000, 1, true, true),
+                            new MobEffectInstance(MobEffects.SLOW_FALLING, 3000, 0, true, true)))
                     .build();
 
     public ModArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
