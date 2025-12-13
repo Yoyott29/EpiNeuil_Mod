@@ -1,6 +1,8 @@
 package net.lesfessesdesgarcons.epineuil;
 
 import com.mojang.logging.LogUtils;
+
+import net.lesfessesdesgarcons.epineuil.sounds.Sounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -46,6 +48,8 @@ public class EpiNeuil
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+        Sounds.register(modEventBus);
+
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

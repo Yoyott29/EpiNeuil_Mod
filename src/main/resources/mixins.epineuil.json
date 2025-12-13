@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.lesfessesdesgarcons.epineuil.mixin",
+  "mixins": [],
+  "client": [
+    "SoundEngineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
