@@ -1,19 +1,13 @@
 package net.lesfessesdesgarcons.epineuil;
 
-// import com.mojang.logging.LogUtils;
-
 import net.lesfessesdesgarcons.epineuil.sounds.Sounds;
-// import net.minecraft.client.Minecraft;
-// import net.minecraft.core.registries.Registries;
-// import net.minecraft.world.food.FoodProperties;
-// import net.minecraft.world.item.BlockItem;
-// import net.minecraft.world.item.CreativeModeTab;
-// import net.minecraft.world.item.CreativeModeTabs;
-// import net.minecraft.world.item.Item;
-// import net.minecraft.world.level.block.Block;
-// import net.minecraft.world.level.block.Blocks;
-// import net.minecraft.world.level.block.state.BlockBehaviour;
-// import net.minecraft.world.level.material.MapColor;
+import org.slf4j.Logger;
+
+import com.mojang.logging.LogUtils;
+
+import net.lesfessesdesgarcons.epineuil.block.Blocks;
+import net.lesfessesdesgarcons.epineuil.item.Items;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,19 +20,13 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-// import net.minecraftforge.registries.DeferredRegister;
-// import net.minecraftforge.registries.ForgeRegistries;
-// import net.minecraftforge.registries.RegistryObject;
-// import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(EpiNeuil.MOD_ID)
 public class EpiNeuil
 {
     public static final String MOD_ID = "epineuil";
 
-    //private static final Logger LOGGER = LogUtils.getLogger();
-   
+    private static final Logger LOGGER = LogUtils.getLogger();
     public EpiNeuil()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -46,6 +34,9 @@ public class EpiNeuil
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        Blocks.register(modEventBus);
+        Items.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         Sounds.register(modEventBus);
@@ -63,6 +54,19 @@ public class EpiNeuil
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(Items.RAW_TENDER);
+            event.accept(Items.TENDER_PIECE);
+            event.accept(Items.TENDER_BUCKET);
+            event.accept(Items.CHICKEN_BOOTS);
+            event.accept(Items.CHICKEN_CHESTPLATE);
+            event.accept(Items.CHICKEN_HELMET);
+            event.accept(Items.CHICKEN_LEGGINGS);
+            event.accept(Items.PHOENIX_BOOTS);
+            event.accept(Items.PHOENIX_CHESTPLATE);
+            event.accept(Items.PHOENIX_HELMET);
+            event.accept(Items.PHOENIX_LEGGINGS);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
