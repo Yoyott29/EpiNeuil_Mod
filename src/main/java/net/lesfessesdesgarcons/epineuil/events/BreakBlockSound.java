@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BreakBlockSound {
 
-    private static final ResourceLocation CUSTOM_SOUND_ID = ResourceLocation.tryParse("epineuil:fart");
+    private static final ResourceLocation CUSTOM_SOUND_ID = ResourceLocation.tryParse("epineuil:breakingblock");
 
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {

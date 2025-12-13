@@ -1,10 +1,17 @@
 {
-  "fart": {
+  "breakingblock": {
     "sounds": [
       {
-        "name": "epineuil:fart",
+        "name": "epineuil:breakingblock",
         "stream": false
       }
     ]
+  },
+  "music": {
+    "sounds": [
+      "epineuil:music"
+    ],
+    "stream": true
   }
 }
+

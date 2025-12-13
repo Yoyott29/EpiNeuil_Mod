@@ -14,14 +14,15 @@ public class Sounds {
     public static final DeferredRegister<SoundEvent> SOUNDS_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, EpiNeuil.MOD_ID);
 
-    public static final RegistryObject<SoundEvent> FART = registerSoundEvent("fart");
+    public static final RegistryObject<SoundEvent> breakingblock = registerSoundEvent("breakingblock");
     public static final RegistryObject<SoundEvent> STEP = registerSoundEvent("step");
     public static final RegistryObject<SoundEvent> PLACE = registerSoundEvent("place");
     public static final RegistryObject<SoundEvent> HIT = registerSoundEvent("hit");
     public static final RegistryObject<SoundEvent> FALL = registerSoundEvent("fall");
+    public static final RegistryObject<SoundEvent> MUSIC = registerSoundEvent("music");
 
-    public static final ForgeSoundType FART_SOUND_TYPE = new ForgeSoundType(1.0F, 1.0F,
-            FART, STEP, PLACE, HIT, FALL);
+    public static final ForgeSoundType breakingblock_SOUND_TYPE = new ForgeSoundType(1.0F, 1.0F,
+            breakingblock, STEP, PLACE, HIT, FALL);
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         System.out.println("[DEBUG] Registering sound: " + name);
@@ -36,3 +37,4 @@ public class Sounds {
         SOUNDS_EVENTS.register(eventBus);
     }
 }
+

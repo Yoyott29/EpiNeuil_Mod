@@ -50,6 +50,7 @@ public class EpiNeuil
         modEventBus.addListener(this::addCreative);
         Sounds.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.BreakBlockSound());
+        MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.PlayMusicContinuous());
 
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
