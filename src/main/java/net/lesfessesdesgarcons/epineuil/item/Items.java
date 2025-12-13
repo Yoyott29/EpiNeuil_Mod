@@ -1,6 +1,7 @@
 package net.lesfessesdesgarcons.epineuil.item;
 
 import net.lesfessesdesgarcons.epineuil.EpiNeuil;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -43,7 +44,56 @@ public class Items
                 ITEMS.register("tender_bucket", () ->
                 new Item(new Item.Properties().food(BUCKET_FOOD)));
 
-        public static void register(IEventBus eventBus) {
+        public static final RegistryObject<Item> CHICKEN_HELMET =
+                ITEMS.register("chicken_helmet", () -> new ModArmorItem(
+                ArmorMaterials.CHICKEN_ARMOR,
+                ArmorItem.Type.HELMET,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> CHICKEN_CHESTPLATE =
+                ITEMS.register("chicken_chestplate", () -> new ArmorItem(
+                ArmorMaterials.CHICKEN_ARMOR,
+                ArmorItem.Type.CHESTPLATE,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> CHICKEN_LEGGINGS =
+                ITEMS.register("chicken_leggings", () -> new ArmorItem(
+                ArmorMaterials.CHICKEN_ARMOR,
+                ArmorItem.Type.LEGGINGS,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> CHICKEN_BOOTS =
+                ITEMS.register("chicken_boots", () -> new ArmorItem(
+                ArmorMaterials.CHICKEN_ARMOR,
+                ArmorItem.Type.BOOTS,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> PHOENIX_HELMET =
+                ITEMS.register("phoenix_helmet", () -> new ModArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.HELMET,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> PHOENIX_CHESTPLATE =
+                ITEMS.register("phoenix_chestplate", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.CHESTPLATE,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> PHOENIX_LEGGINGS =
+                ITEMS.register("phoenix_leggings", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.LEGGINGS,
+                new Item.Properties()));
+
+        public static final RegistryObject<Item> PHOENIX_BOOTS =
+                ITEMS.register("phoenix_boots", () -> new ArmorItem(
+                ArmorMaterials.PHOENIX_ARMOR,
+                ArmorItem.Type.BOOTS,
+                new Item.Properties()));
+
+        public static void register(IEventBus eventBus)
+        {
                 ITEMS.register(eventBus);
         }
 }

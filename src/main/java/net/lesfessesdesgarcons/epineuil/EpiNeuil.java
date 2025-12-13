@@ -53,6 +53,14 @@ public class EpiNeuil
             event.accept(Items.RAW_TENDER);
             event.accept(Items.TENDER_PIECE);
             event.accept(Items.TENDER_BUCKET);
+            event.accept(Items.CHICKEN_BOOTS);
+            event.accept(Items.CHICKEN_CHESTPLATE);
+            event.accept(Items.CHICKEN_HELMET);
+            event.accept(Items.CHICKEN_LEGGINGS);
+            event.accept(Items.PHOENIX_BOOTS);
+            event.accept(Items.PHOENIX_CHESTPLATE);
+            event.accept(Items.PHOENIX_HELMET);
+            event.accept(Items.PHOENIX_LEGGINGS);
         }
     }
 
