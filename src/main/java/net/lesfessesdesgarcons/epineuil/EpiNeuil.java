@@ -50,8 +50,9 @@ public class EpiNeuil
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(Items.TENDER);
-            event.accept(Items.BUCKET);
+            event.accept(Items.RAW_TENDER);
+            event.accept(Items.TENDER_PIECE);
+            event.accept(Items.TENDER_BUCKET);
         }
     }
 

@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "epineuil:item/tender"
+        "layer0": "epineuil:item/tender_piece"
     }
 }

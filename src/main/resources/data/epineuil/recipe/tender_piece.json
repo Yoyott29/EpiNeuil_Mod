@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "epineuil:tender_bucket"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "id": "epineuil:tender_piece"
+    }
+}
