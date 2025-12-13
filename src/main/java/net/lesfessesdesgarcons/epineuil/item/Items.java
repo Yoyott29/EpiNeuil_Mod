@@ -20,7 +20,7 @@ public class Items
             ITEMS.register("bucket", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CHICKEN_HELMET =
-            ITEMS.register("chicken_helmet", () -> new ArmorItem(
+            ITEMS.register("chicken_helmet", () -> new ModArmorItem(
                 ArmorMaterials.CHICKEN_ARMOR,
                 ArmorItem.Type.HELMET,
                 new Item.Properties()));
