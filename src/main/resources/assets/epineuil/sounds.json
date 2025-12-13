@@ -1,7 +1,10 @@
 {
   "fart": {
     "sounds": [
-      "fart"
+      {
+        "name": "epineuil:fart",
+        "stream": false
+      }
     ]
   }
 }
