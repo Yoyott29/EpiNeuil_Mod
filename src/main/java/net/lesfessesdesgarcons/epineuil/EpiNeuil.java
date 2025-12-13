@@ -52,6 +52,10 @@ public class EpiNeuil
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(Items.TENDER);
             event.accept(Items.BUCKET);
+            event.accept(Items.CHICKEN_BOOTS);
+            event.accept(Items.CHICKEN_CHESTPLATE);
+            event.accept(Items.CHICKEN_HELMET);
+            event.accept(Items.CHICKEN_LEGGINGS);
         }
     }
 
