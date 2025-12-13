@@ -1,7 +1,10 @@
 package net.lesfessesdesgarcons.epineuil;
 
+import org.slf4j.Logger;
+
 import com.mojang.logging.LogUtils;
 
+import net.lesfessesdesgarcons.epineuil.block.Blocks;
 import net.lesfessesdesgarcons.epineuil.item.Items;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,7 +20,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(EpiNeuil.MOD_ID)
@@ -35,6 +37,7 @@ public class EpiNeuil
 
         MinecraftForge.EVENT_BUS.register(this);
 
+        Blocks.register(modEventBus);
         Items.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
