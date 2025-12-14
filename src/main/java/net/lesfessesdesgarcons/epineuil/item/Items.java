@@ -1,6 +1,9 @@
 package net.lesfessesdesgarcons.epineuil.item;
 
 import net.lesfessesdesgarcons.epineuil.EpiNeuil;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -8,10 +11,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.lesfessesdesgarcons.epineuil.block.Blocks;
 
 public class Items
 {
@@ -24,16 +23,13 @@ public class Items
         .effect(new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F)
         .build();
 
-        public static final RegistryObject<Item> POULYTE_BLOCK_ITEM = ITEMS.register("poulyte_block",
-        () -> new BlockItem(Blocks.POULYTE_BLOCK.get(), new Item.Properties()));
-
-    public static final RegistryObject<Item> TENDER =
-            ITEMS.register("tender", () -> new Item(new Item.Properties()));
-
-        public static final FoodProperties TENDER_FOOD = new FoodProperties.Builder()
+    public static final FoodProperties TENDER_FOOD = new FoodProperties.Builder()
                 .nutrition(2)
                 .saturationModifier(0.3F)
                 .build();
+
+    public static final RegistryObject<Item> BUCKET =
+            ITEMS.register("bucket", () -> new Item(new Item.Properties()));
 
         public static final FoodProperties BUCKET_FOOD = new FoodProperties.Builder()
                 .nutrition(6)
@@ -51,6 +47,16 @@ public class Items
         public static final RegistryObject<Item> TENDER_BUCKET =
                 ITEMS.register("tender_bucket", () ->
                 new Item(new Item.Properties().food(BUCKET_FOOD)));
+
+        public static final RegistryObject<Item> POULYTE =
+                ITEMS.register("poulyte", () -> new Item(new Item.Properties()));
+
+        public static final RegistryObject<Item> POULYTE_BLOCK_ITEM =
+                ITEMS.register("poulyte_block",
+                        () -> new BlockItem(
+                                net.lesfessesdesgarcons.epineuil.block.Blocks.POULYTE_BLOCK.get(),
+                                new Item.Properties()
+                        ));
 
         public static final RegistryObject<Item> CHICKEN_HELMET =
                 ITEMS.register("chicken_helmet", () -> new ModArmorItem(

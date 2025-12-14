@@ -21,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.lesfessesdesgarcons.epineuil.block.Blocks;
+
 @Mod(EpiNeuil.MOD_ID)
 public class EpiNeuil
 {
@@ -35,8 +37,8 @@ public class EpiNeuil
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        Blocks.register(modEventBus);
         Items.register(modEventBus);
+        Blocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         Sounds.register(modEventBus);
@@ -67,6 +69,8 @@ public class EpiNeuil
             event.accept(Items.PHOENIX_CHESTPLATE);
             event.accept(Items.PHOENIX_HELMET);
             event.accept(Items.PHOENIX_LEGGINGS);
+            event.accept(Items.POULYTE);
+            event.accept(Items.POULYTE_BLOCK_ITEM);
         }
     }
 
