@@ -1,0 +1,17 @@
+{
+  "breakingblock": {
+    "sounds": [
+      {
+        "name": "epineuil:breakingblock",
+        "stream": false
+      }
+    ]
+  },
+  "music": {
+    "sounds": [
+      "epineuil:music"
+    ],
+    "stream": true
+  }
+}
+

@@ -166,6 +166,10 @@ tasks.named('processResources', ProcessResources).configure {
     }
 }
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 // Example for how to get properties into the manifest for reading at runtime.
 tasks.named('jar', Jar).configure {
     manifest {

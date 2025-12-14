@@ -1,5 +1,6 @@
 package net.lesfessesdesgarcons.epineuil;
 
+import net.lesfessesdesgarcons.epineuil.sounds.Sounds;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -20,15 +21,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.lesfessesdesgarcons.epineuil.block.Blocks;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(EpiNeuil.MOD_ID)
 public class EpiNeuil
 {
     public static final String MOD_ID = "epineuil";
 
     private static final Logger LOGGER = LogUtils.getLogger();
-
     public EpiNeuil()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -41,6 +41,10 @@ public class EpiNeuil
         Items.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
+        Sounds.register(modEventBus);
+        MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.BreakBlockSound());
+        MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.PlayMusicContinuous());
+
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
