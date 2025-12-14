@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smelting",
+    "category": "misc",
+    "cookingtime": 200,
+    "experience": 0.25,
+    "group": "tender_piece",
+    "ingredient": {
+            "item": "epineuil:raw_tender"
+    },
+    "result": {
+        "id": "epineuil:tender_piece"
+    }
+}
