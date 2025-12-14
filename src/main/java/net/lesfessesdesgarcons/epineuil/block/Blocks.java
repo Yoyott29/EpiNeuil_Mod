@@ -16,7 +16,7 @@ public class Blocks {
 
     public static final RegistryObject<Block> POULYTE_BLOCK = BLOCKS.register("poulyte_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3.0f)
+                    .strength(2.0f)
                     .sound(SoundType.STONE)
             ));
 
