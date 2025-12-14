@@ -2,6 +2,9 @@ package net.lesfessesdesgarcons.epineuil.item;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -9,11 +12,17 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.lesfessesdesgarcons.epineuil.sounds.Sounds;
 
 import java.util.List;
 import java.util.Map;
 
 public class ModArmorItem extends ArmorItem {
+
+    private static final ResourceLocation CUSTOM_SOUND_ID = ResourceLocation.tryParse("epineuil:phoenix_armor");
+    public static final String ARMOR_SOUND_PLAYED = "armor_sound_played";
+
     private static final Map<Holder<ArmorMaterial>, List<MobEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ArmorMaterials.CHICKEN_ARMOR,
@@ -34,9 +43,33 @@ public class ModArmorItem extends ArmorItem {
 
     @Override
     public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex) {
-        if(!level.isClientSide() && hasFullSuitOfArmorOn(player)) {
-            evaluateArmorEffects(player);
+        if (level.isClientSide()) return;
+
+    boolean hasFullSuit = hasFullSuitOfArmorOn(player);
+    var data = player.getPersistentData();
+
+    if (hasFullSuit && !data.getBoolean(ARMOR_SOUND_PLAYED)) {
+        SoundEvent soundEvent = ForgeRegistries.SOUND_EVENTS.getValue(CUSTOM_SOUND_ID);
+
+        if (soundEvent != null && player.blockPosition() != null && hasPlayerCorrectArmorOn(ArmorMaterials.PHOENIX_ARMOR, player)) {
+            level.playSound(
+                null,
+                player.blockPosition(),
+                soundEvent,
+                SoundSource.PLAYERS,
+                0.5F,
+                1.0F
+            );
         }
+
+        data.putBoolean(ARMOR_SOUND_PLAYED, true);
+        evaluateArmorEffects(player);
+    }
+
+    // Reset when armor is removed
+    if (!hasFullSuit && data.getBoolean(ARMOR_SOUND_PLAYED)) {
+        data.putBoolean(ARMOR_SOUND_PLAYED, false);
+    }
     }
 
     private void evaluateArmorEffects(Player player) {

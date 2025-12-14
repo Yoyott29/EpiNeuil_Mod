@@ -12,6 +12,27 @@
       "epineuil:music"
     ],
     "stream": true
+  },
+
+  "phoenix_armor": {
+    "sounds": [
+      "epineuil:phoenix_armor"
+    ],
+    "stream": true
+  },
+
+  "tender_cooked": {
+    "sounds": [
+      "epineuil:tender_cooked"
+    ],
+    "stream": false
+  },
+
+  "ho_le_poulet": {
+    "sounds": [
+      "epineuil:ho_le_poulet"
+    ],
+    "stream": false
   }
 }
 

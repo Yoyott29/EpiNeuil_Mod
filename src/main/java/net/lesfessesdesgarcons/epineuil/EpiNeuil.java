@@ -42,6 +42,7 @@ public class EpiNeuil
         Sounds.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.BreakBlockSound());
         MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.PlayMusicContinuous());
+        MinecraftForge.EVENT_BUS.register(new net.lesfessesdesgarcons.epineuil.events.TenderCookedSound());
 
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

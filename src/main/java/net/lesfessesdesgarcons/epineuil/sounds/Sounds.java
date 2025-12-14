@@ -3,7 +3,6 @@ package net.lesfessesdesgarcons.epineuil.sounds;
 import net.lesfessesdesgarcons.epineuil.EpiNeuil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,17 +14,12 @@ public class Sounds {
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, EpiNeuil.MOD_ID);
 
     public static final RegistryObject<SoundEvent> breakingblock = registerSoundEvent("breakingblock");
-    public static final RegistryObject<SoundEvent> STEP = registerSoundEvent("step");
-    public static final RegistryObject<SoundEvent> PLACE = registerSoundEvent("place");
-    public static final RegistryObject<SoundEvent> HIT = registerSoundEvent("hit");
-    public static final RegistryObject<SoundEvent> FALL = registerSoundEvent("fall");
     public static final RegistryObject<SoundEvent> MUSIC = registerSoundEvent("music");
-
-    public static final ForgeSoundType breakingblock_SOUND_TYPE = new ForgeSoundType(1.0F, 1.0F,
-            breakingblock, STEP, PLACE, HIT, FALL);
+    public static final RegistryObject<SoundEvent> PHOENIX_ARMOR = registerSoundEvent("phoenix_armor");
+    public static final RegistryObject<SoundEvent> tender_cooked = registerSoundEvent("tender_cooked");
+    public static final RegistryObject<SoundEvent> ho_le_poulet = registerSoundEvent("ho_le_poulet");
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
-        System.out.println("[DEBUG] Registering sound: " + name);
     return SOUNDS_EVENTS.register(name, () -> 
         (SoundEvent) SoundEvent.createVariableRangeEvent(
             ResourceLocation.fromNamespaceAndPath(EpiNeuil.MOD_ID, name)

@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class PlayMusicContinuous {
 
     private static final ResourceLocation CUSTOM_SOUND_ID = ResourceLocation.tryParse("epineuil:music");
-    private static final int MUSIC_LENGTH_TICKS = 20 * 36; // length of music in ticks (e.g., 120 seconds * 20 ticks)
+    private static final int MUSIC_LENGTH_TICKS = 20 * 36;
     private int tickCounter = MUSIC_LENGTH_TICKS;
 
     @SubscribeEvent
@@ -29,7 +29,7 @@ public class PlayMusicContinuous {
 
             SoundEvent soundEvent = ForgeRegistries.SOUND_EVENTS.getValue(CUSTOM_SOUND_ID);
             if (soundEvent != null) {
-                player.playNotifySound(soundEvent, SoundSource.PLAYERS, 1.0F, 1.0F);
+                player.playNotifySound(soundEvent, SoundSource.PLAYERS, 0.3F, 1.0F);
             }
         }
     }
