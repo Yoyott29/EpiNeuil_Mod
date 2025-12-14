@@ -23,9 +23,6 @@ public class Items
         .effect(new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F)
         .build();
 
-    public static final RegistryObject<Item> TENDER =
-            ITEMS.register("tender", () -> new Item(new Item.Properties()));
-
     public static final FoodProperties TENDER_FOOD = new FoodProperties.Builder()
                 .nutrition(2)
                 .saturationModifier(0.3F)

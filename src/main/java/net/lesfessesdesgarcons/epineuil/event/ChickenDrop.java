@@ -22,19 +22,18 @@ public class ChickenDrop {
         LivingEntity entity = event.getEntity();
         if (!(entity instanceof Chicken)) return;
 
-        // Côté serveur uniquement
         if (entity.level().isClientSide()) return;
 
         event.getDrops().clear();
-        if (Items.TENDER == null || Items.TENDER.get() == null) return;
-        ItemStack tender = new ItemStack(Items.TENDER.get(), 1);
+        if (Items.RAW_TENDER == null || Items.RAW_TENDER.get() == null) return;
+        ItemStack raw_tender = new ItemStack(Items.RAW_TENDER.get(), 1);
 
         ItemEntity drop = new ItemEntity(
                 entity.level(),
                 entity.getX(),
                 entity.getY(),
                 entity.getZ(),
-                tender
+                raw_tender
         );
 
         event.getDrops().add(drop);
