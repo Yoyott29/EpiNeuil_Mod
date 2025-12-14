@@ -34,7 +34,7 @@ public class TenderCookedSound {
                     player.blockPosition(),
                     soundEvent,
                     SoundSource.PLAYERS,
-                    0.5F,
+                    0.2F,
                     1.0F
                 );
             }
