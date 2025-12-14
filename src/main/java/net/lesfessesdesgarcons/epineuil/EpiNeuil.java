@@ -21,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.lesfessesdesgarcons.epineuil.block.Blocks;
+
 @Mod(EpiNeuil.MOD_ID)
 public class EpiNeuil
 {
