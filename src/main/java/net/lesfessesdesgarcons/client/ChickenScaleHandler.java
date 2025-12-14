@@ -3,6 +3,7 @@ package net.lesfessesdesgarcons.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.lesfessesdesgarcons.epineuil.EpiNeuil;
+import net.lesfessesdesgarcons.epineuil.utils.ChickenUtils;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderLivingEvent;
@@ -18,7 +19,7 @@ public class ChickenScaleHandler {
         if (event.getEntity() instanceof Chicken chicken) {
             PoseStack poseStack = event.getPoseStack();
 
-            float scale = 1F + (chicken.getId() % 20) * 0.5F;
+           float scale = ChickenUtils.getOrCreateScale(chicken);
             poseStack.scale(scale, scale, scale);
         }
     }
